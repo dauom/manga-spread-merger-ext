@@ -5,5 +5,30 @@
   "main": "index.js",
   "repository": "git@github.com:dauom/manga-spread-merger-ext.git",
   "author": "Mouad Naciri <mouadnaciri1@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "gts": "^3.1.0",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-web-ext-tool": "^0.2.2",
+    "typescript": "^4.2.3",
+    "web-ext": "^6.0.0",
+    "webextension-polyfill-ts": "^0.25.0"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "yarn run compile",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run lint"
+  },
+  "devDependencies": {
+    "gts": "^3.1.0",
+    "typescript": "^4.0.3",
+    "@types/node": "^14.11.2"
+  }
 }
