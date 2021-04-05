@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Manga Spread Merger",
+  "version": "0.0.1",
+  "description": "A browser extension that helps manga readers join/merge two-page spreads into one in websites that don't do that (such as mangaplus).",
+  "icons": {
+    "16": "images/ext_icon/merge16.png",
+    "32": "images/ext_icon/merge32.png",
+    "48": "images/ext_icon/merge48.png",
+    "128": "images/ext_icon/merge128.png"
+  }
+}
