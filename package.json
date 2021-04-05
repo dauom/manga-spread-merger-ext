@@ -1,0 +1,9 @@
+{
+  "name": "manga-spread-merger-ext",
+  "version": "0.0.1",
+  "description": "A browser extension that helps manga readers join/merge two-page spreads into one in websites that don't do that (such as mangaplus).",
+  "main": "index.js",
+  "repository": "git@github.com:dauom/manga-spread-merger-ext.git",
+  "author": "Mouad Naciri <mouadnaciri1@gmail.com>",
+  "license": "MIT"
+}
