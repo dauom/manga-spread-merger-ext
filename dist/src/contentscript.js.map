@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/contentscript.ts"],"names":[],"mappings":";AACA,aAAA,IAAA,EADA,QAAQ,IAAI,OACwB,QAApC,EAAA,SAAS,KAAK,cAAc,gBAAQ,IAAA,GAAA,EAAE,UAAU,IAAI","file":"contentscript.js","sourceRoot":"..","sourcesContent":["console.log('foo');\ndocument.body.querySelector('input')?.classList.add('qux');\n"]}
