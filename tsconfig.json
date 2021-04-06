@@ -2,12 +2,9 @@
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "lib": ["esnext", "dom"],
-		"target": "ES2015",
-    "rootDir": ".",
-    "outDir": "build"
+		"target": "es5",
+    "strict": true,
+    "noImplicitAny": true,
   },
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
-  ]
+  "include": ["src/**/*", "test/**/*"],
 }
