@@ -22,5 +22,13 @@
         "src/contentscript.ts"
       ]
     }
-  ]
+  ],
+  "browser_action": {
+    "default_title": "Merge"
+  },
+  "background": {
+    "scripts": [
+      "src/background.ts"
+    ]
+  }
 }

@@ -1,2 +1,2 @@
 console.log('foo');
-document.body.querySelector('input')?.classList.add('sassy-body');
+document.body.querySelector('input')?.classList.add('qux');
