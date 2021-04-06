@@ -8,5 +8,19 @@
     "32": "images/ext_icon/merge32.png",
     "48": "images/ext_icon/merge48.png",
     "128": "images/ext_icon/merge128.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "src/style.scss"
+      ],
+      "js": [
+        "src/contentscript.ts"
+      ]
+    }
+  ]
 }

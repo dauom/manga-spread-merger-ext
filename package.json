@@ -7,27 +7,30 @@
   "author": "Mouad Naciri <mouadnaciri1@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.20.0",
-    "@typescript-eslint/parser": "^4.20.0",
-    "eslint": "^7.23.0",
-    "gts": "^3.1.0",
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-web-ext-tool": "^0.2.2",
-    "typescript": "^4.2.3",
     "web-ext": "^6.0.0",
     "webextension-polyfill-ts": "^0.25.0"
   },
   "scripts": {
     "lint": "gts lint",
     "clean": "gts clean",
-    "compile": "tsc",
+    "compile": "yarn run build",
     "fix": "gts fix",
     "prepare": "yarn run compile",
     "pretest": "yarn run compile",
-    "posttest": "yarn run lint"
+    "posttest": "yarn run lint",
+    "watch": "./node_modules/parcel-bundler/bin/cli.js watch ./manifest.json --no-hmr",
+    "build": "./node_modules/parcel-bundler/bin/cli.js build ./manifest.json"
   },
   "devDependencies": {
+    "@types/node": "^14.11.2",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
     "gts": "^3.1.0",
-    "@types/node": "^14.11.2"
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-web-ext-tool": "^0.2.2",
+    "parcel-plugin-web-extension": "^1.6.1",
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3"
   }
 }
