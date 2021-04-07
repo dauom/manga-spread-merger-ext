@@ -13,7 +13,7 @@
     "build": "parcel build ./manifest.json",
     "compile": "yarn run build",
     "watch-parcel": "parcel watch ./manifest.json --no-hmr",
-    "watch-web-ext": "cd dist && web-ext run --config=../web-ext-config.js",
+    "watch-web-ext": "web-ext run --config=web-ext-config.js --source-dir=./dist/",
     "watch": "yarn run build && concurrently 'yarn:watch-*'"
   },
   "devDependencies": {
