@@ -1,11 +1,13 @@
 import {nearestAncestor} from '../utils/dom';
-import {PagesFinder, Page, PagesTagger} from './pages_finder';
+import {PagesFinder, Page, PagesTagger, PagesMetadata} from './pages_finder';
 
 export class MangaplusPagesFinder implements PagesFinder {
   readonly tagger: PagesTagger;
+  readonly metadata: PagesMetadata;
 
   constructor(readonly root: HTMLElement) {
     this.tagger = new MangaplusPagesTagger(this.root);
+    this.metadata = new MangaplusPagesMetadata();
   }
 
   find(): Page[] {
@@ -72,4 +74,8 @@ class MangaplusPagesTagger implements PagesTagger {
     });
     return pages;
   }
+}
+
+class MangaplusPagesMetadata implements PagesMetadata {
+  readonly pagesContainerClassName: string = 'zao-surface';
 }

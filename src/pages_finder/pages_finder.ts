@@ -3,6 +3,7 @@ export type Page = HTMLElement;
 export interface PagesFinder {
   readonly root: HTMLElement;
   readonly tagger: PagesTagger;
+  readonly metadata: PagesMetadata;
 
   find(): Page[];
   indexOf(page: Page): number;
@@ -15,4 +16,8 @@ export interface PagesTagger {
 
   tag(page: Page): void;
   findUntagged(): Page[];
+}
+
+export interface PagesMetadata {
+  readonly pagesContainerClassName: string;
 }

@@ -1,19 +1,15 @@
-import {Page, PagesFinder} from './pages_finder/pages_finder';
-import {MangaplusPagesFinder} from './pages_finder/mangaplus_pages_finder';
-import {PagesMerger} from './pages_merger/pages_merger';
-import {MangaplusPagesMerger} from './pages_merger/mangaplus_pages_merger';
+import {Page} from './pages_finder/pages_finder';
 import {waitFor} from './utils/dom';
+import {
+  MangaSiteHandler,
+  mangaSiteHandler,
+} from './manga_sites_registry/manga_sites_registry';
 
 console.log('MSM Extension loaded');
 
-const pagesFinder: PagesFinder = new MangaplusPagesFinder(document.body);
-const pagesMerger: PagesMerger = new MangaplusPagesMerger(pagesFinder);
+const handler: MangaSiteHandler = mangaSiteHandler(window.location.href);
 
-function tagAndListen(
-  pages: Page[],
-  pagesFinder: PagesFinder,
-  pagesMerger: PagesMerger
-) {
+function tagAndListen(pages: Page[], handler: MangaSiteHandler) {
   for (const page of pages) {
     page.addEventListener('click', (e: MouseEvent) => {
       if (!(e.ctrlKey && e.shiftKey)) {
@@ -22,30 +18,34 @@ function tagAndListen(
       e.preventDefault();
       e.stopPropagation();
 
-      if (pagesMerger.isMerged(page)) {
-        pagesMerger.unmerge(page);
+      if (handler.pagesMerger.isMerged(page)) {
+        handler.pagesMerger.unmerge(page);
       } else {
-        pagesMerger.mergeWithNext(page);
+        handler.pagesMerger.mergeWithNext(page);
       }
     });
-    pagesFinder.tagger.tag(page);
+    handler.pagesFinder.tagger.tag(page);
   }
 }
 
-waitFor(document.body, 'zao-surface', (e: HTMLElement) => {
-  function findAndTagPages() {
-    const untaggedPages: Page[] = pagesFinder.tagger.findUntagged();
-    if (untaggedPages.length) {
-      tagAndListen(untaggedPages, pagesFinder, pagesMerger);
+waitFor(
+  document.body,
+  handler.pagesFinder.metadata.pagesContainerClassName,
+  (e: HTMLElement) => {
+    function findAndTagPages() {
+      const untaggedPages: Page[] = handler.pagesFinder.tagger.findUntagged();
+      if (untaggedPages.length) {
+        tagAndListen(untaggedPages, handler);
+      }
     }
-  }
-  findAndTagPages();
+    findAndTagPages();
 
-  const observer = new MutationObserver(findAndTagPages);
-  const observerConfig: MutationObserverInit = {
-    subtree: true,
-    childList: true,
-    attributes: false,
-  };
-  observer.observe(e, observerConfig);
-});
+    const observer = new MutationObserver(findAndTagPages);
+    const observerConfig: MutationObserverInit = {
+      subtree: true,
+      childList: true,
+      attributes: false,
+    };
+    observer.observe(e, observerConfig);
+  }
+);
