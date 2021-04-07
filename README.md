@@ -1,4 +1,6 @@
-<img align="left" width="48" height="48" src="images/ext_icon/merge48.png" alt="extension icon">
+<p align="center">
+  <img align="center" width="48" height="48" src="images/ext_icon/merge48.png" alt="extension icon">
+</p>
 
 # Manga Spread Merger Extension
 
