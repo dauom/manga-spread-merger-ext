@@ -15,25 +15,23 @@ function tagAndListen(
   pagesMerger: PagesMerger
 ) {
   for (const page of pages) {
-    page.addEventListener('click', (e: Event) => {
+    page.addEventListener('click', (e: MouseEvent) => {
+      if (!(e.ctrlKey && e.shiftKey)) {
+        return;
+      }
       e.preventDefault();
       e.stopPropagation();
 
       if (pagesMerger.isMerged(page)) {
         pagesMerger.unmerge(page);
-        return;
+      } else {
+        pagesMerger.mergeWithNext(page);
       }
-      pagesMerger.mergeWithNext(page);
     });
     pagesFinder.tagger.tag(page);
   }
 }
 
-const observerConfig: MutationObserverInit = {
-  subtree: true,
-  childList: true,
-  attributes: false,
-};
 waitFor(document.body, 'zao-surface', (e: HTMLElement) => {
   function findAndTagPages() {
     const untaggedPages: Page[] = pagesFinder.tagger.findUntagged();
@@ -42,6 +40,12 @@ waitFor(document.body, 'zao-surface', (e: HTMLElement) => {
     }
   }
   findAndTagPages();
+
   const observer = new MutationObserver(findAndTagPages);
+  const observerConfig: MutationObserverInit = {
+    subtree: true,
+    childList: true,
+    attributes: false,
+  };
   observer.observe(e, observerConfig);
 });
