@@ -6,6 +6,11 @@
 
 A browser extension that helps manga readers join/merge two-page spreads into one in websites that don't do that (such as mangaplus).
 
+## Features
+- Easy to use; one click to merge an image and the next one.
+- Supported manga sites:
+   * Mangaplus (vertical reading mode).
+
 ## Installation
 
 >TODO(mouad): add releases and installation info.
