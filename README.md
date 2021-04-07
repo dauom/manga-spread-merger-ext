@@ -1,5 +1,5 @@
-# Manga Spread Merger Extension
+<img align="left" width="48" height="48" src="images/ext_icon/merge48.png" alt="extension icon">
 
-[![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
+# Manga Spread Merger Extension
 
 A browser extension that helps manga readers join/merge two-page spreads into one in websites that don't do that (such as mangaplus).
