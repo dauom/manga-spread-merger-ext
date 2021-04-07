@@ -1,3 +1,5 @@
-body {
-  background-color: grey !important;
+.msm-ext {
+  &__mouseover {
+    border: 5px red solid;
+  }
 }

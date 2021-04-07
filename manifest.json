@@ -12,8 +12,8 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://mangaplus.shueisha.co.jp/viewer/*",
+        "https://mangaplus.shueisha.co.jp/viewer/*"
       ],
       "css": [
         "src/style.scss"
@@ -24,7 +24,7 @@
     }
   ],
   "browser_action": {
-    "default_title": "Merge"
+    "default_title": "Toggle merge mode"
   },
   "background": {
     "scripts": [
