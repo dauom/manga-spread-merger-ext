@@ -1017,6 +1017,11 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@types/arrive@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@types/arrive/-/arrive-2.4.0.tgz#7f88b400998d46dc7a59dfbb1b6d59dfbc44f244"
+  integrity sha512-PhqkvNI/Q2w82qkxphBdoStbmVnlF90xUGrid1cEF4ORgRpGgd85391xcIAFKfFui0usDofQDCsHyfPe5yLdCQ==
+
 "@types/json-schema@^7.0.3":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.7.tgz#98a993516c859eb0d5c4c8f098317a9ea68db9ad"
@@ -1427,6 +1432,11 @@ arrify@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
   integrity sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==
+
+arrive@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/arrive/-/arrive-2.4.1.tgz#564c87f20bc09b80de781124d9431695004b8020"
+  integrity sha1-VkyH8gvAm4DeeBEk2UMWlQBLgCA=
 
 asn1.js@^5.2.0:
   version "5.4.1"

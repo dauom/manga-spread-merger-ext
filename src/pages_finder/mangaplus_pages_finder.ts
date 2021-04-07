@@ -1,8 +1,12 @@
-import {nearestAncestor} from '../utils/dom_traversal';
-import {PagesFinder, Page} from './pages_finder';
+import {nearestAncestor} from '../utils/dom';
+import {PagesFinder, Page, PagesTagger} from './pages_finder';
 
 export class MangaplusPagesFinder implements PagesFinder {
-  constructor(readonly root: HTMLElement) {}
+  readonly tagger: PagesTagger;
+
+  constructor(readonly root: HTMLElement) {
+    this.tagger = new MangaplusPagesTagger(this.root);
+  }
 
   find(): Page[] {
     const pages: Page[] = [];
@@ -48,5 +52,24 @@ export class MangaplusPagesFinder implements PagesFinder {
 
   matchesUrl(url: string): boolean {
     return url.includes('mangaplus.shueisha.co.jp/');
+  }
+}
+
+class MangaplusPagesTagger implements PagesTagger {
+  constructor(readonly root: HTMLElement) {}
+
+  tag(page: Page) {
+    page.dataset.msmExtTag = 'true';
+  }
+
+  findUntagged(): Page[] {
+    const pages: Page[] = [];
+    const nodes: NodeListOf<HTMLElement> = this.root.querySelectorAll(
+      '.zao-page .zao-image:not([data-msm-ext-tag])'
+    );
+    nodes.forEach((node: HTMLElement) => {
+      pages.push(node);
+    });
+    return pages;
   }
 }

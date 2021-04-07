@@ -1,6 +1,6 @@
 import {HTMLElementOrNone} from '../constants';
 import {Page, PagesFinder} from '../pages_finder/pages_finder';
-import {nearestAncestor} from '../utils/dom_traversal';
+import {nearestAncestor} from '../utils/dom';
 import {PagesMerger} from './pages_merger';
 
 export class MangaplusPagesMerger implements PagesMerger {
