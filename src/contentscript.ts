@@ -5,8 +5,6 @@ import {
   mangaSiteHandler,
 } from './manga_sites_registry/manga_sites_registry';
 
-console.log('MSM Extension loaded');
-
 const handler: MangaSiteHandler = mangaSiteHandler(window.location.href);
 
 function tagAndListen(pages: Page[], handler: MangaSiteHandler) {
@@ -49,3 +47,5 @@ waitFor(
     observer.observe(e, observerConfig);
   }
 );
+
+console.log('MSM Extension loaded');
