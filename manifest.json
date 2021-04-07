@@ -15,9 +15,6 @@
         "http://mangaplus.shueisha.co.jp/viewer/*",
         "https://mangaplus.shueisha.co.jp/viewer/*"
       ],
-      "css": [
-        "src/style.scss"
-      ],
       "js": [
         "src/contentscript.ts"
       ]
