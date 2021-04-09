@@ -7,6 +7,7 @@
   "author": "Mouad Naciri <mouadnaciri1@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "is-svg": "4.2.2",
     "webextension-polyfill-ts": "^0.25.0"
   },
   "scripts": {
