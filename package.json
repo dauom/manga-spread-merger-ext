@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "parcel build ./manifest.json",
+    "build-zip": "yarn run build && web-ext build --source-dir=./dist/ --overwrite-dest",
     "compile": "yarn run build",
     "watch-parcel": "parcel watch ./manifest.json --no-hmr",
     "watch-web-ext": "web-ext run --config=web-ext-config.js --source-dir=./dist/",
