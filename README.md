@@ -1,3 +1,6 @@
+[![Build and Test](https://github.com/dauom/manga-spread-merger-ext/actions/workflows/main.yml/badge.svg)](https://github.com/dauom/manga-spread-merger-ext/actions/workflows/main.yml)
+[![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
+
 <p align="center">
   <img width="48" height="48" src="images/ext_icon/merge48.png" alt="Extension icon" />
 </p>
